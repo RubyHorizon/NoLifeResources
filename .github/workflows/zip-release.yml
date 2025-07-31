@@ -15,14 +15,18 @@ jobs:
 
     - name: Archive repository
       run: |
-        zip -r NoLifeResources.zip . -x ".github/workflows/*"
+        zip -r NoLifeResourcepack.zip . -x ".github/" ".git/"
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
         tag_name: latest
-        name: Latest Release
-        files: NoLifeResources.zip
+        name: NoLifeResources
+        body: |
+          [This link](https://github.com/RubyHorizon/NoLifeResources/releases/download/latest/NoLifeResourcepack.zip) contains the current version of the resource pack for the [NoLife](https://github.com/RubyHorizon/NoLife) game.
+
+          Powered by Ruby Horizon Team ;)
+        files: NoLifeResourcepack.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
