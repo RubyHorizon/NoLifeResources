@@ -15,7 +15,7 @@ jobs:
 
     - name: Archive repository
       run: |
-        zip -r NoLifeResourcepack.zip . -x ".github/" ".git/"
+        zip -r NoLifeResourcepack.zip . -x "*.git*" "*.github*"
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
