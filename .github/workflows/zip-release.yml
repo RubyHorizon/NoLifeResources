@@ -26,6 +26,8 @@ jobs:
           [This link](https://github.com/RubyHorizon/NoLifeResources/releases/download/latest/NoLifeResourcepack.zip) contains the current version of the resource pack for the [NoLife](https://github.com/RubyHorizon/NoLife) game.
 
           Powered by Ruby Horizon Team ;)
+
+          Enjoy!
         files: NoLifeResourcepack.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
