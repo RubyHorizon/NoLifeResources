@@ -1,0 +1,34 @@
+name: Zip Repository and Upload as Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  zip-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Archive repository
+      run: |
+        zip -r NoLifeResources.zip . -x ".github/workflows/*"
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: latest
+        name: Latest Release
+        files: NoLifeResources.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Overwrite "latest" tag
+      run: |
+        git config user.name "github-actions"
+        git config user.email "github-actions@github.com"
+        git tag -f latest
+        git push origin latest --force

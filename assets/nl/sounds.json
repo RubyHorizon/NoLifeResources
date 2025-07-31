@@ -1,0 +1,17 @@
+{
+    "restart": {
+        "sounds": [
+            "nl:pointsound"
+        ]
+    },
+    "timer": {
+        "sounds": [
+            "nl:beep"
+        ]
+    },
+    "start": {
+        "sounds": [
+            "nl:reboot"
+        ]
+    }
+}
